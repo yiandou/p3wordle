@@ -1,10 +1,11 @@
 import random
-word = 'linux'
-#wordlist = ['abort', 'basic', 'block', 'debug', 'crash', 'input', 'flash', 'forth', 'image', 'index', 'layer', 'linux', 'macro', 'octal', 'proxy', 'patch',  'stack']
+wordlist = ['abort', 'basic', 'block', 'debug', 'crash', 'input', 'flash', 'forth', 'image', 'index', 'layer', 'linux', 'macro', 'octal', 'proxy', 'patch',  'stack']
+word = random.choice(wordlist)
 
 default = "\033[0m"
 green = "\033[92m"
 yellow = "\033[33m"
+
 def gen_hint(word, guess):
     color = default
     hint = ""
@@ -27,7 +28,7 @@ def game_loop():
             print('Invalid guess. Try again.')
             continue
         if guess == word:
-            print('You win!')
+            print(f'You win! The word was {gen_hint(word, guess)}')
             break
         else:
             if i < 5:
